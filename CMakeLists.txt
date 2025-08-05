@@ -292,6 +292,16 @@ target_compile_definitions(qjsc PRIVATE ${qjs_defines})
 target_link_libraries(qjsc qjs)
 
 
+# QuickJS bytecode executable
+#
+add_executable(qjsb
+    qjsb.c
+)
+add_qjs_libc_if_needed(qjsb)
+target_compile_definitions(qjsb PRIVATE ${qjs_defines})
+target_link_libraries(qjsb qjs)
+
+
 # QuickJS CLI
 #
 
